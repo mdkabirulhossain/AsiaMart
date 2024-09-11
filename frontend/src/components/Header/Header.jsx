@@ -2,13 +2,14 @@ import './Header.css';
 import { CiSearch } from "react-icons/ci";
 import { FaUserAlt } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
     return (
         <div className='flex justify-between items-center shadow-md h-10'>
             <div>
-                <h1 className='text-orange-500 p-2'>AsiaMart</h1>
+               <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link>
             </div>
             <div className='flex items-center nav-search'>
                 <input type="text" placeholder='search....' className='pl-1 border border-orange-500 rounded-l-md outline-none h-6' name="" id="" />
@@ -26,7 +27,7 @@ const Header = () => {
                 </div>
                 
                 <div>
-                    <button className='bg-orange-500 px-2 rounded-lg'>login</button>
+                    <Link to='/login'><button className='bg-orange-500 px-2 rounded-lg'>login</button></Link> 
                 </div>
             </div>
         </div>
