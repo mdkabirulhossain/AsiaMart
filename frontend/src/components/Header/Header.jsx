@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='flex justify-between items-center shadow-md h-10'>
+        <div className='flex justify-between items-center shadow-md h-14'>
             <div>
                <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link>
             </div>
