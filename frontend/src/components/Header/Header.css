@@ -7,8 +7,8 @@ a.active hr{
     border-radius: 5px;
     padding: 2px;
 }
-@media(max-width:600px){
-    .menu-section{
+@media (max-width: 600px){
+    .menu-sections{
         display: none;
     }
 }
