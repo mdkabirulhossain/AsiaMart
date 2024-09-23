@@ -1,4 +1,12 @@
 
+a.active hr{
+    display: block;
+}
+.option:hover{
+    background-color: rgb(234 88 12);
+    border-radius: 5px;
+    padding: 2px;
+}
 @media(max-width:600px){
     .nav-search{
         display: none;
