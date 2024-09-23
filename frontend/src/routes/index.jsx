@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Collection from "../components/Collection/Collection";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
+import Cart from "../components/Cart/Cart";
   
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         {
           path:"/contact",
           element:<Contact></Contact>
+        },
+        {
+          path:"/cart",
+          element:<Cart/>
         },
       ]
     },

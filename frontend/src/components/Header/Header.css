@@ -8,7 +8,7 @@ a.active hr{
     padding: 2px;
 }
 @media(max-width:600px){
-    .nav-search{
+    .menu-section{
         display: none;
     }
 }
