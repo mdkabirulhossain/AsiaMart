@@ -77,19 +77,19 @@ const Header = () => {
                         <p className='text-sm text-white'>Back</p>
                     </div>
                     <NavLink to='/' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2 option">
-                    <p className='text-xs text-black text-center py-2 border-2 border-white'>HOME</p>
+                    <p className='text-xs text-white text-center py-2 border-2 border-white'>HOME</p>
                    
                 </NavLink>
                 <NavLink to='/collection' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2">
-                    <p className='text-xs text-black text-center py-2 border-2 border-white'>COLLECTION</p>
+                    <p className='text-xs text-white text-center py-2 border-2 border-white'>COLLECTION</p>
                     
                 </NavLink>
                 <NavLink to='/about' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2">
-                    <p className='text-xs text-black text-center py-2 border-2 border-white'>ABOUT</p>
+                    <p className='text-xs text-white text-center py-2 border-2 border-white'>ABOUT</p>
                    
                 </NavLink>
                 <NavLink to='/contact' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2">
-                    <p className='text-xs text-black text-center py-2 border-2 border-white'>CONTACT</p>
+                    <p className='text-xs text-white text-center py-2 border-2 border-white'>CONTACT</p>
         
                 </NavLink>
                 </div>

@@ -11,4 +11,8 @@ a.active hr{
     .menu-sections{
         display: none;
     }
+    a.active{
+        background-color: black;
+        
+    }
 }
