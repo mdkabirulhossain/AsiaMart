@@ -52,7 +52,7 @@ export const product_items = [
     { _id: "19", name: "Cardigan", category: "Clothing", price: 49.99, image: Cardigan, bestseller:false  },
     { _id: "20", name: "Blazer", category: "Clothing", price: 89.99, image: Blazer, bestseller:false },
     { _id: "21", name: "Chinos", category: "Clothing", price: 49.99, image: Chinos, bestseller:false  },
-    { _id: "22", name: "Windbreaker", category: "Clothing", price: 59.99, image: Windbreaker, bestseller:false  },
+    { _id: "22", name: "Windbreaker", category: "Clothing", price: 59.99, image: Windbreaker, bestseller:true  },
     { _id: "23", name: "Tracksuit", category: "Clothing", price: 79.99, image: TrackSuit, bestseller:false  },
     { _id: "24", name: "Hoodie", category: "Clothing", price: 39.99, image: Hoodie, bestseller:false  },
     { _id: "25", name: "Culottes", category: "Clothing", price: 44.99, image: Culottes, bestseller:false  },
