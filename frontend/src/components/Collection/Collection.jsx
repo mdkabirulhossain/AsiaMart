@@ -1,13 +1,61 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
 import { FaChevronRight } from "react-icons/fa";
+import ProductItem from '../ProductItem/ProductItem';
+
 
 const Collection = () => {
     const{product_items} = useContext(ShopContext);
     const [showFilter, setShowFilter] = useState(false);
+    const [filterProducts, setFilterProducts] = useState([]);
+    const [category, setCategory] = useState([]);
+    const [subcategory, setSubCategory] = useState([]);
+
+    const handleCategory = (event) =>{
+        if(category.includes(event.target.value)){
+            setCategory(previous => previous.filter(item => item !== event.target.value))
+        }
+        else{
+            setCategory(previous => [...previous, event.target.value])
+        }
+    }
+
+    const handleSubCategory = (event) =>{
+        if(subcategory.includes(event.target.value)){
+            setSubCategory(previous => previous.filter(item=> item !== event.target.value))
+        }else{
+            setSubCategory(previous => [...previous, event.target.value])
+        }
+    }
+
+    const applyFilter = ()=>{
+        let productsCopy = product_items.slice();
+
+        if(category.length > 0){
+            productsCopy = productsCopy.filter(item =>category.includes(item.category))
+        }
+
+        if(subcategory.length > 0){
+            productsCopy = productsCopy.filter(item => subcategory.includes(item.subcategory))
+        }
+        setFilterProducts(productsCopy);
+    }
+
+    useEffect(()=>{
+        setFilterProducts(product_items);
+    },[])
+
+    useEffect(()=>{
+        applyFilter();
+    },[category, subcategory])
+
+    // useEffect(()=>{
+    //     console.log(subcategory);
+    // },[subcategory])
+
 
     return (
-        <div className='flex gap-4'>
+        <div className='flex flex-col md:flex-row gap-4 mb-10'>
             <div className='ml-4'>
                 <p onClick={()=>setShowFilter(!showFilter)} className='mt-10 flex items-center gap-2 cursor-pointer text-xl text-black w-60'>FILTER
                     <FaChevronRight className={`h-4 sm:hidden ${showFilter? 'rotate-90': ""}`}></FaChevronRight>
@@ -16,13 +64,13 @@ const Collection = () => {
                     <p className="mb-3 text-sm font-medium">CATEGORIES</p>
                     <div className="flex flex-col gap-2 text-sm text-black">
                         <p className="flex gap-2">
-                            <input type="checkbox" className='w-3' value={"Men"} name="" id="" /> Men
+                            <input type="checkbox" className='w-3' value={"Men"} name="" id="" onChange={handleCategory} /> Men
                         </p>
                         <p className="flex gap-2">
-                            <input type="checkbox" className='w-3' value={"Women"} name="" id="" /> Women
+                            <input type="checkbox" className='w-3' value={"Women"} name="" id="" onChange={handleCategory} /> Women
                         </p>
                         <p className="flex gap-2">
-                            <input type="checkbox" className='w-3' value={"Kids"} name="" id="" /> Kids
+                            <input type="checkbox" className='w-3' value={"Kids"} name="" id="" onChange={handleCategory} /> Kids
                         </p>
                     </div>
                 </div>
@@ -30,13 +78,13 @@ const Collection = () => {
                     <p className="mb-3 text-sm font-medium">TYPES</p>
                     <div className="flex flex-col gap-2 text-sm text-black">
                         <p className="flex gap-2">
-                            <input type="checkbox" className='w-3' value={"Topwear"} name="" id="" /> Topwear
+                            <input type="checkbox" className='w-3' value={"Topwear"} name="" id="" onChange={handleSubCategory} /> Topwear
                         </p>
                         <p className="flex gap-2">
-                            <input type="checkbox" className='w-3' value={"Bottomwear"} name="" id="" /> Bottomwear
+                            <input type="checkbox" className='w-3' value={"Bottomwear"} name="" id="" onChange={handleSubCategory} /> Bottomwear
                         </p>
                         <p className="flex gap-2">
-                            <input type="checkbox" className='w-3' value={"Winterwear"} name="" id="" /> Winterwear
+                            <input type="checkbox" className='w-3' value={"Winterwear"} name="" id="" onChange={handleSubCategory} /> Winterwear
                         </p>
                     </div>
                 </div>
@@ -50,6 +98,13 @@ const Collection = () => {
                         <option value="low-high">Sort by: Low to HIgh</option>
                         <option value="high-low">Sort by: High to Low</option>
                     </select>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 gap-y-6">
+                    {
+                        filterProducts.map(item =><ProductItem
+                        key={item._id} id={item._id} name={item.name} image={item.image} price={item.price}
+                        ></ProductItem>)
+                    }
                 </div>
             </div>
         </div>
