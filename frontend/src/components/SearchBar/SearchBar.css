@@ -1,0 +1,4 @@
+.nav-search input::placeholder{
+    font-size: small;
+    color: red;
+}

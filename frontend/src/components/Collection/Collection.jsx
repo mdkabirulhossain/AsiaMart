@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
 import { FaChevronRight } from "react-icons/fa";
 import ProductItem from '../ProductItem/ProductItem';
+import './Collection.css'
 
 
 const Collection = () => {
@@ -80,11 +81,11 @@ const Collection = () => {
 
     return (
         <div className='flex flex-col md:flex-row gap-4 mb-10'>
-            <div className='ml-4'>
+            <div className='ml-4 '>
                 <p onClick={()=>setShowFilter(!showFilter)} className='mt-10 flex items-center gap-2 cursor-pointer text-xl text-black w-60'>FILTER
                     <FaChevronRight className={`h-4 sm:hidden ${showFilter? 'rotate-90': ""}`}></FaChevronRight>
                 </p>
-                <div className={`border border-gray-300 pl-5 py-3 my-3 w-60 ${showFilter? "": "hidden"} sm:block` }>
+                <div className={`border border-orange-300 pl-5 py-3 my-3 w-60 ${showFilter? "": "hidden"} sm:block` }>
                     <p className="mb-3 text-sm font-medium">CATEGORIES</p>
                     <div className="flex flex-col gap-2 text-sm text-black">
                         <p className="flex gap-2">
@@ -98,7 +99,7 @@ const Collection = () => {
                         </p>
                     </div>
                 </div>
-                <div className={`border border-gray-300 pl-5 py-3 my-5 w-60 ${showFilter? "": "hidden"} sm:block` }>
+                <div className={`border border-orange-300 pl-5 py-3 my-5 w-60 ${showFilter? "": "hidden"} sm:block` }>
                     <p className="mb-3 text-sm font-medium">TYPES</p>
                     <div className="flex flex-col gap-2 text-sm text-black">
                         <p className="flex gap-2">
@@ -117,7 +118,7 @@ const Collection = () => {
             <div className="flex-1 mt-10">
                 <div className='flex justify-between mb-3'>
                     <p className='text-black text-2xl'>ALL COLLECTIONS</p>
-                    <select onChange={(e)=>setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2' name="" id="">
+                    <select onChange={(e)=>setSortType(e.target.value)} className='border-2 border-orange-300 text-sm px-2' name="" id="">
                         <option value="relevant">Sort: Relevant</option>
                         <option value="low-high"> Low to HIgh</option>
                         <option value="high-low"> High to Low</option>

@@ -1,24 +1,20 @@
 import './Header.css';
-import { CiSearch } from "react-icons/ci";
 import { FaBackward, FaSearch, FaUserAlt } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link, NavLink } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ShopContext } from '../../Context/ShopContext';
 
 const Header = () => {
-    const[visible, setVisible] = useState(false)
+    const[visible, setVisible] = useState(false);
+    const{setShowSearch} = useContext(ShopContext);
     return (
         <div className='flex justify-between items-center shadow-md h-14'>
             <div>
                 <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link>
             </div>
-            {/* <div className='flex items-center nav-search'>
-                <input type="text" placeholder='search....' className='pl-1 border border-orange-500 rounded-l-md outline-none h-6' name="" id="" />
-                <div className=''>
-                    <CiSearch className='bg-orange-500 w-9 h-6 rounded-r-md text-white'></CiSearch>
-                </div>
-            </div> */}
+            
             <div className="menu-sections flex justify-between items-center gap-4">
                 <NavLink to='/' className="flex flex-col gap-0.2 option">
                     <p className='text-xs text-black'>HOME</p>
@@ -39,7 +35,7 @@ const Header = () => {
             </div>
             <div className='p-2 flex items-center gap-3'>
                 <div className='cursor-pointer'>
-                    <FaSearch></FaSearch>
+                    <FaSearch onClick={()=>setShowSearch(true)}></FaSearch>
                 </div>
                 <div className='group relative'>
 
