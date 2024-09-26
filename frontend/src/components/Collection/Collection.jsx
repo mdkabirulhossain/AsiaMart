@@ -10,6 +10,7 @@ const Collection = () => {
     const [filterProducts, setFilterProducts] = useState([]);
     const [category, setCategory] = useState([]);
     const [subcategory, setSubCategory] = useState([]);
+    const [sortType, setSortType] = useState('relevant');
 
     const handleCategory = (event) =>{
         if(category.includes(event.target.value)){
@@ -40,6 +41,25 @@ const Collection = () => {
         }
         setFilterProducts(productsCopy);
     }
+    
+    const handleSort =() =>{
+        let filter_Products = filterProducts.slice();
+        switch(sortType){
+            case "low-high":
+                setFilterProducts(filter_Products.sort((a,b)=>(a.price - b.price)));
+                break;
+
+            case "high-low":
+                setFilterProducts(filter_Products.sort((a,b)=>(b.price - a.price)));
+                break;
+
+            default:
+                applyFilter();
+                break;
+
+        }
+    }
+
 
     useEffect(()=>{
         setFilterProducts(product_items);
@@ -48,6 +68,10 @@ const Collection = () => {
     useEffect(()=>{
         applyFilter();
     },[category, subcategory])
+
+    useEffect(()=>{
+        handleSort();
+    },[sortType])
 
     // useEffect(()=>{
     //     console.log(subcategory);
@@ -91,12 +115,12 @@ const Collection = () => {
             </div>
             {/* Right side  */}
             <div className="flex-1 mt-10">
-                <div className='flex justify-between mb-4'>
+                <div className='flex justify-between mb-3'>
                     <p className='text-black text-2xl'>ALL COLLECTIONS</p>
-                    <select className='border-2 border-gray-300 text-sm px-2' name="" id="">
-                        <option value="relevant">Sort by: Relevant</option>
-                        <option value="low-high">Sort by: Low to HIgh</option>
-                        <option value="high-low">Sort by: High to Low</option>
+                    <select onChange={(e)=>setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2' name="" id="">
+                        <option value="relevant">Sort: Relevant</option>
+                        <option value="low-high"> Low to HIgh</option>
+                        <option value="high-low"> High to Low</option>
                     </select>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 gap-y-6">
