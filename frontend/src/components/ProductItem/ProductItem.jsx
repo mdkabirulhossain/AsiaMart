@@ -10,10 +10,10 @@ const ProductItem = ({id, image, name, price}) => {
     return (
     <Link className='shadow-2xl ' to={`/product/${id}`}>
         <div className='overflow-hidden'>
-            <img src={image} alt="" className='w-[300px] h-[200px] item_image' />
+            <img src={image} alt="" className='w-full h-[200px] item_image' />
         </div>
-        <p className='text-sm pt-3'>{name}</p>
-        <p className='text-sm pt-3'>{currency}{price}</p>
+        <p className='text-xl pt-3 pl-3'>{name}</p>
+        <p className='text-sm font-bold pt-3 pl-3'>{currency}{price}</p>
     
     </Link>
     );
