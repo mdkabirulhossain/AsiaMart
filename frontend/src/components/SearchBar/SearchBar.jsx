@@ -21,11 +21,11 @@ const SearchBar = () => {
 
     return showSearch && visible ? (
         <div className='flex justify-center items-center nav-search  mt-5'>
-            <input value={search} onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='search....' className='text-xs pl-1 border border-orange-500 rounded-l-full outline-none h-6 w-1/2' name="" id="" />
+            <input value={search} onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='search....' className='text-xs p-4 pl-2 border border-orange-500 rounded-l-full outline-none h-6 w-1/2' name="" id="" />
             <div className=''>
-                <CiSearch className='bg-orange-500 w-12 h-6 rounded-r-full text-white'></CiSearch>
+                <CiSearch className='bg-orange-500 w-12 h-9 rounded-r-full text-white'></CiSearch>
             </div>
-            <IoMdClose onClick={()=>setShowSearch(false)}></IoMdClose>
+            <IoMdClose className='pl-2 w-6 cursor-pointer' onClick={()=>setShowSearch(false)}></IoMdClose>
         </div>
     ) : null;
 };
