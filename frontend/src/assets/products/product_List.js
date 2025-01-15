@@ -41,9 +41,9 @@ import kids_shorts from '../products/kids_shorts.jpg'
 
 
 export const product_items = [
-    { _id: "1", name: "T-Shirt", category: "Men", subcategory: "Topwear", price: 19.99, image: t_shirt, bestseller: true },
-    { _id: "2", name: "Jeans", category: "Men", subcategory: "Bottomwear", price: 49.99, image: jeans, bestseller: false },
-    { _id: "3", name: "Sweater", category: "Women", subcategory: "Winterwear", price: 39.99, image: sweater, bestseller: true },
+    { _id: "1", name: "T-Shirt", category: "Men", subcategory: "Topwear", price: 19.99, image: t_shirt, images:[ t_shirt, jeans, t_shirt, jeans], bestseller: true },
+    { _id: "2", name: "Jeans", category: "Men", subcategory: "Bottomwear", price: 49.99, image: jeans, images:[ t_shirt, jeans, t_shirt, jeans], bestseller: false },
+    { _id: "3", name: "Sweater", category: "Women", subcategory: "Winterwear", price: 39.99, image: sweater, images:[ t_shirt, jeans, t_shirt, jeans], bestseller: true },
     { _id: "4", name: "Jacket", category: "Men", subcategory: "Winterwear", price: 89.99, image: jacket, bestseller: false },
     { _id: "5", name: "Shorts", category: "Women", subcategory: "Bottomwear", price: 29.99, image: short, bestseller: true },
     { _id: "6", name: "Dress", category: "Women", subcategory: "Topwear", price: 59.99, image: Dress, bestseller: false },

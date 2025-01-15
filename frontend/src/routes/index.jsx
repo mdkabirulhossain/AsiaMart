@@ -10,6 +10,7 @@ import Collection from "../components/Collection/Collection";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Cart from "../components/Cart/Cart";
+import Product from "../pages/Product/Product";
   
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
         {
           path:"/cart",
           element:<Cart/>
+        },
+        {
+          path:"/product/:id",
+          element:<Product/>
         },
       ]
     },
