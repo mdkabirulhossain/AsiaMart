@@ -12,7 +12,7 @@ const SearchBar = () => {
     useEffect(()=>{
         // console.log(location);
         //Search bar only show for collection
-        if(location.pathname.includes('collection')){
+        if(location.pathname.includes('collection') ){
             setVisible(true);
         } else{
             setVisible(false);
@@ -21,7 +21,7 @@ const SearchBar = () => {
 
     return showSearch && visible ? (
         <div className='flex justify-center items-center nav-search  mt-5'>
-            <input value={search} onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='search....' className='text-xs p-4 pl-2 border border-orange-500 rounded-l-full outline-none h-6 w-1/2' name="" id="" />
+            <input value={search} onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search....' className='text-xs p-4 pl-2 border border-orange-500 rounded-l-full outline-none h-6 w-1/2' name="" id="" />
             <div className=''>
                 <CiSearch className='bg-orange-500 w-12 h-9 rounded-r-full text-white'></CiSearch>
             </div>
