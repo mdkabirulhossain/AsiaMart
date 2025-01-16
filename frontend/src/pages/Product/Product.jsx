@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import { FaStar } from 'react-icons/fa6';
+import RelatedProduct from '../../components/RelatedProduct/RelatedProduct';
 
 
 const Product = () => {
@@ -63,7 +64,7 @@ const Product = () => {
                             {
                                 productData.sizes.map(item =>
 
-                                    <button onClick={()=>setSize(item)} key={item._id} className={`border py-2 px-4 bg-gray-100 ${size === item? 'border-orange-500': " "}`}>{item}</button>
+                                    <button key={item._id} onClick={()=>setSize(item)}  className={`border py-2 px-4 bg-gray-100 ${size === item? 'border-orange-500': " "}`}>{item}</button>
                                 )
                             }
                         </div>
@@ -78,6 +79,23 @@ const Product = () => {
                     </div>
                 </div>
             </div>
+            {/* Description & Review secction  */}
+            <div className='mt-20'>
+                <div className='flex'>
+                    <p className='border px-5 py-3 text-sm'>Description</p>
+                    <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
+
+                </div>
+
+                <div className='flex flex-col gap-4 border px-6 text-sm text-gray-500'>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat obcaecati quibusdam dicta odio ducimus assumenda reprehenderit perferendis porro, aspernatur asperiores laudantium neque esse, non eum dolorum commodi. Laboriosam, cupiditate obcaecati ipsum, vero neque aliquam atque quasi eligendi porro minima dolores perspiciatis fugiat velit perferendis accusamus quos debitis harum omnis sed.</p>
+                    <p>Review ipsum dolor sit amet consectetur adipisicing elit. Incidunt ducimus cumque provident veritatis perspiciatis dolorum exercitationem laudantium! Suscipit, odio illo! Odit qui minima fugit tenetur aspernatur molestiae pariatur provident labore voluptatem perspiciatis fugiat culpa corrupti incidunt perferendis, soluta dolor aliquam, ipsam quisquam tempore corporis porro reprehenderit. Libero doloribus in recusandae!</p>
+                </div>
+
+            </div>
+
+            {/* Related Product  */}
+            <RelatedProduct category={productData.category} subCategory={productData.subCategory}></RelatedProduct>
         </div> 
     ):
     <div className='opacity-0'>
