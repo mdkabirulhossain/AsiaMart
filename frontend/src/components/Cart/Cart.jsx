@@ -4,7 +4,7 @@ import Title from '../Title/Title';
 import { MdDelete } from "react-icons/md";
 
 const Cart = () => {
-    const { product_items, currency, cartItem } = useContext(ShopContext);
+    const { product_items, currency, cartItem, updateQuantity } = useContext(ShopContext);
     const [cartData, setCartData] = useState([])
 
     useEffect(() => {
@@ -56,7 +56,7 @@ const Cart = () => {
                                     </div>
 
                                     <div>
-                                        <MdDelete className='cursor-pointer w-10 h-7'></MdDelete>
+                                        <MdDelete onClick={()=>updateQuantity(item._id, item.size, 0)} className='cursor-pointer w-10 h-7'></MdDelete>
                                     </div>
 
 
