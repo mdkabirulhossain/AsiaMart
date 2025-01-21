@@ -33,7 +33,7 @@ const StoreContextProvider = (props) => {
         setCartItem(cartData);
     }
 
-    //product remove from the cart
+    //product remove from the cart only when quantity is 0
     const updateQuantity = async(Itemid, size, quantity) =>{
         let cartData = structuredClone(cartItem);
 
