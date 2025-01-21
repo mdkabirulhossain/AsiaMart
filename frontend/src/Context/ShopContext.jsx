@@ -50,9 +50,9 @@ const StoreContextProvider = (props) => {
         return totalCount;
     }
 
-    useEffect(()=>{
-        console.log(cartItem);
-    }, [cartItem])
+    // useEffect(()=>{
+    //     console.log(cartItem);
+    // }, [cartItem])
     
     const value = {
         product_items,
@@ -64,6 +64,8 @@ const StoreContextProvider = (props) => {
         setShowSearch,
         addToCart,
         getCartCount,
+        cartItem, 
+        setCartItem,
 
     }
     return (
