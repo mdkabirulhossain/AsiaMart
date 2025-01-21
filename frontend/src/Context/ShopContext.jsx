@@ -13,13 +13,14 @@ const StoreContextProvider = (props) => {
     const [cartItem, setCartItem] = useState({});
 
     const addToCart = async (Itemid, size) => {
+        //using structuredclone to copy data
         let cartData = structuredClone(cartItem);
         if(!size){
             toast.error("Select product size");
             return;
         }
         if (cartData[Itemid]) {
-            if (cartData[Itemid], [size]) {
+            if (cartData[Itemid][size]) {
                 cartData[Itemid][size] += 1;
             } else {
                 cartData[Itemid][size] = 1;
@@ -30,6 +31,23 @@ const StoreContextProvider = (props) => {
         }
 
         setCartItem(cartData);
+    }
+
+    const getCartCount = () =>{
+        let totalCount = 0;
+        for(const items in cartItem){
+            for(const item in cartItem[items]){
+                try{
+                    if(cartItem[items][item] > 0){
+                        totalCount += cartItem[items][item];
+                    }
+                } catch(error){
+                    console.log(error)
+                }
+                
+            }
+        }
+        return totalCount;
     }
 
     useEffect(()=>{
@@ -45,6 +63,7 @@ const StoreContextProvider = (props) => {
         showSearch,
         setShowSearch,
         addToCart,
+        getCartCount,
 
     }
     return (

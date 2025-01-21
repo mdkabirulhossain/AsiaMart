@@ -8,7 +8,7 @@ import { ShopContext } from '../../Context/ShopContext';
 
 const Header = () => {
     const[visible, setVisible] = useState(false);
-    const{setShowSearch} = useContext(ShopContext);
+    const{setShowSearch, getCartCount} = useContext(ShopContext);
     return (
         <div className='flex justify-between items-center shadow-md h-14'>
             <div>
@@ -53,9 +53,9 @@ const Header = () => {
 
                 <div className='relative cursor-pointer'>
                     <Link to='/cart'>
-                        <FaCartShopping></FaCartShopping>
-                        <div className='bg-orange-500 text-white w-3 h-3 rounded-full p-1 flex items-center justify-center absolute -top-2 right-0'>
-                            <p className='text-xs'>0</p>
+                        <FaCartShopping className='w-5'></FaCartShopping>
+                        <div className='bg-orange-500 text-white w-4 h-3 rounded-full p-2 flex items-center justify-center absolute -top-3 right-0'>
+                            <p className='text-xs'>{getCartCount()}</p>
                         </div>
                     </Link>
                 </div>
