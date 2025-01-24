@@ -58,6 +58,23 @@ const StoreContextProvider = (props) => {
         return totalCount;
     }
 
+    const getCartAmount = async() =>{
+        let totalAmount = 0;
+        for(const items in cartItem){
+            let itemInfo = product_items.find(product =>product._id === items);
+            for(const item in cartItem[items]){
+                try{
+                    if(cartItem[items][item] > 0){
+                        totalAmount += itemInfo.price * cartItem[items][item]
+                    }
+                } catch(error){
+                    console.log("Get Cart Amount error")
+                }
+            }
+        }
+        return totalAmount;
+        
+    }
     // useEffect(()=>{
     //     console.log(cartItem);
     // }, [cartItem])
@@ -75,6 +92,7 @@ const StoreContextProvider = (props) => {
         cartItem, 
         setCartItem,
         updateQuantity,
+        getCartAmount,
 
     }
     return (
