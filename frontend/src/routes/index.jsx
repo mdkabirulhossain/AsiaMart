@@ -11,6 +11,7 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Cart from "../components/Cart/Cart";
 import Product from "../pages/Product/Product";
+import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
   
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         {
           path:"/product/:id",
           element:<Product/>
+        },
+        {
+          path:"/placeorder",
+          element:<PlaceOrder />
         },
       ]
     },

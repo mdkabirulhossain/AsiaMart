@@ -3,6 +3,7 @@ import { product_items } from "../assets/products/product_List";
 import { toast } from "react-toastify";
 
 
+
 export const ShopContext = createContext(null);
 
 const StoreContextProvider = (props) => {
@@ -11,6 +12,7 @@ const StoreContextProvider = (props) => {
     const [search, setSearch] = useState("");
     const [showSearch, setShowSearch] = useState(false);
     const [cartItem, setCartItem] = useState({});
+   
 
     const addToCart = async (Itemid, size) => {
         //using structuredclone to copy data
@@ -93,6 +95,7 @@ const StoreContextProvider = (props) => {
         setCartItem,
         updateQuantity,
         getCartAmount,
+       
 
     }
     return (

@@ -3,9 +3,10 @@ import { ShopContext } from '../../Context/ShopContext';
 import Title from '../Title/Title';
 import { MdDelete } from "react-icons/md";
 import CartTotal from '../CartTotal/CartTotal';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { product_items, currency, cartItem, updateQuantity } = useContext(ShopContext);
+    const { product_items, currency, cartItem, updateQuantity, navigate } = useContext(ShopContext);
     const [cartData, setCartData] = useState([])
 
     useEffect(() => {
@@ -73,6 +74,9 @@ const Cart = () => {
             <div className='flex justify-end my-20'>
                 <div className='w-full sm:w-[450px]'>
                     <CartTotal></CartTotal>
+                    <div className="w-full text-end">
+                     <Link to={'/PlaceOrder'}> <button className='bg-black text-white text-sm my-8 px-8 py-3'>PROCED TO CHECKOUT</button></Link>   
+                    </div>
                 </div>
 
             </div>
