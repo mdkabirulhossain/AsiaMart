@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Title from '../../components/Title/Title';
 import CartTotal from '../../components/CartTotal/CartTotal';
 import { FaCcStripe } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const PlaceOrder = () => {
     const [method, setMothod] = useState('cod');
@@ -53,7 +54,7 @@ const PlaceOrder = () => {
                         </div>
                     </div>
                     <div className='w-full text-end mt-8'>
-                        <button className='bg-black text-white px-16 py-3 text-sm'>PLACE ORDER</button>
+                        <Link to={'/order'}><button className='bg-black text-white px-16 py-3 text-sm'>PLACE ORDER</button></Link>
                     </div>
 
                 </div>

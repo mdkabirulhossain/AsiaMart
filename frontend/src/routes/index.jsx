@@ -12,6 +12,7 @@ import Contact from "../pages/Contact/Contact";
 import Cart from "../components/Cart/Cart";
 import Product from "../pages/Product/Product";
 import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
+import Order from "../pages/Order/Order";
   
 
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         {
           path:"/placeorder",
           element:<PlaceOrder />
+        },
+        {
+          path:"/order",
+          element:<Order />
         },
       ]
     },
