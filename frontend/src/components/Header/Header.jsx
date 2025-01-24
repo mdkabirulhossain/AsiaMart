@@ -39,12 +39,12 @@ const Header = () => {
                 </div>
                 <div className='group relative'>
 
-                    <FaUserAlt />
-                    <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-1 shadow-md bg-orange-500'>
-                        <div className='flex flex-col gap-2 w-36 py-3 px-5 text-black '>
-                            <p className="cursor-pointer text-sm hover:text-white">My profile</p>
-                            <p className="cursor-pointer text-sm hover:text-white">Orders</p>
-                            <p className="cursor-pointer text-sm hover:text-white">Logout</p>
+                    <Link to={'/login'}><FaUserAlt /></Link>
+                    <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-1 shadow-md bg-orange-400'>
+                        <div className='flex flex-col gap-2 w-36 py-3 px-5 text-white '>
+                            <Link to={"#"}><p className="cursor-pointer text-sm hover:text-black">My profile</p></Link>
+                            <Link to={"/order"}><p className="cursor-pointer text-sm hover:text-black">Orders</p></Link>
+                            <p className="cursor-pointer text-sm hover:text-black">Logout</p>
                         </div>
                     </div>
 
