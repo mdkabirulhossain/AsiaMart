@@ -15,7 +15,7 @@ const CartTotal = () => {
             <div className='flex flex-col gap-2 mt-2 text-sm'>
                 <div className='flex justify-between'>
                     <p>SubTotal</p>
-                    <p>{currency}{getCartAmount()}</p>
+                    <p>{currency}{getCartAmount().toFixed(2)}</p>
 
                 </div>
                 <hr />
@@ -27,7 +27,7 @@ const CartTotal = () => {
                 <hr />
                 <div className='flex justify-between'>
                     <strong>Total</strong>
-                    <strong>{currency}{getCartAmount() === 0? 0 : getCartAmount()+{delivery_fee}}</strong>
+                    <strong>{currency}{getCartAmount() === 0 ? 0 : (getCartAmount() + Number(delivery_fee)).toFixed(2)}</strong>
 
                 </div>
                 

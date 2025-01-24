@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
 import Title from '../Title/Title';
 import { MdDelete } from "react-icons/md";
+import CartTotal from '../CartTotal/CartTotal';
 
 const Cart = () => {
     const { product_items, currency, cartItem, updateQuantity } = useContext(ShopContext);
@@ -68,6 +69,12 @@ const Cart = () => {
                         )
                     })
                 }
+            </div>
+            <div className='flex justify-end my-20'>
+                <div className='w-full sm:w-[450px]'>
+                    <CartTotal></CartTotal>
+                </div>
+
             </div>
         </div>
     );
