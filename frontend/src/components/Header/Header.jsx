@@ -5,14 +5,16 @@ import { Link, NavLink } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
 import { useContext, useState } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
+import logo from '../../assets/logo.webp'
 
 const Header = () => {
     const[visible, setVisible] = useState(false);
     const{setShowSearch, getCartCount} = useContext(ShopContext);
     return (
-        <div className='flex justify-between items-center shadow-md h-14'>
+        <div className='flex justify-between items-center shadow-md h-20 bg-white'>
             <div>
-                <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link>
+                {/* <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link> */}
+                <Link to='/'><img src={logo} className='w-36 h-14 ml-8' alt="" srcset="" /></Link>
             </div>
             
             <div className="menu-sections flex justify-between items-center gap-4">
