@@ -8,36 +8,44 @@ import { ShopContext } from '../../Context/ShopContext';
 import logo from '../../assets/logo.webp'
 
 const Header = () => {
-    const[visible, setVisible] = useState(false);
-    const{setShowSearch, getCartCount} = useContext(ShopContext);
+    const [visible, setVisible] = useState(false);
+    const { setShowSearch, getCartCount } = useContext(ShopContext);
     return (
-        <div className='flex justify-between items-center shadow-md h-20 bg-white'>
+        <div className='flex justify-between items-center shadow-md h-20 bg-white pr-2 md:pr-6'>
             <div>
                 {/* <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link> */}
-                <Link to='/'><img src={logo} className='w-36 h-14 ml-8' alt="" srcset="" /></Link>
+                <Link to='/'><img src={logo} className='w-24 md:w-36 h-14 ml-2 md:ml-8' alt="" srcset="" /></Link>
             </div>
-            
-            <div className="menu-sections flex justify-between items-center gap-4">
+
+            <div className="menu-sections flex justify-between items-center gap-10">
                 <NavLink to='/' className="flex flex-col gap-0.2 option">
-                    <p className='text-xs text-black'>HOME</p>
-                    <hr className=' bg-orange-600 h-[2px] hidden' />
+                    <p className='text-base text-black'>HOME</p>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <hr className='bg-orange-600 w-3/4 h-[2px] hidden' />
+                    </div>
                 </NavLink>
                 <NavLink to='/collection' className="flex flex-col gap-0.2">
-                    <p className='text-xs text-black'>COLLECTION</p>
-                    <hr className="bg-orange-600 h-[2px] hidden" />
+                    <p className='text-base text-black'>COLLECTION</p>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <hr className='bg-orange-600 w-3/4 h-[2px] hidden' />
+                    </div>
                 </NavLink>
                 <NavLink to='/about' className="flex flex-col gap-0.2">
-                    <p className='text-xs text-black'>ABOUT</p>
-                    <hr className=' bg-orange-600 h-[2px] hidden' />
+                    <p className='text-base text-black'>ABOUT</p>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <hr className='bg-orange-600 w-3/4 h-[2px] hidden' />
+                    </div>
                 </NavLink>
                 <NavLink to='/contact' className="flex flex-col gap-0.2">
-                    <p className='text-xs text-black'>CONTACT</p>
-                    <hr className=' bg-orange-600 h-[2px] hidden' />
+                    <p className='text-base text-black'>CONTACT</p>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <hr className='bg-orange-600 w-3/4 h-[2px] hidden' />
+                    </div>
                 </NavLink>
             </div>
-            <div className='p-2 flex items-center gap-3'>
+            <div className='p-2 flex items-center gap-6'>
                 <div className='cursor-pointer'>
-                    <FaSearch onClick={()=>setShowSearch(true)}></FaSearch>
+                    <FaSearch onClick={() => setShowSearch(true)}></FaSearch>
                 </div>
                 <div className='group relative'>
 
@@ -62,34 +70,34 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='menu sm:hidden'>
-                    <IoMenu onClick={()=>setVisible(true)} className='cursor-pointer'/>
+                    <IoMenu onClick={() => setVisible(true)} className='cursor-pointer' />
                 </div>
                 {/* <div>
                     <Link to='/login'><button className='bg-orange-500 px-2 rounded-lg'>login</button></Link>
                 </div> */}
             </div>
-            <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-orange-500 transition-all ${visible? 'w-full': 'w-0'}`}>
+            <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-orange-500 transition-all ${visible ? 'w-full' : 'w-0'}`}>
                 <div className='flex flex-col text-black'>
-                    <div onClick={()=>setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
+                    <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
                         <FaBackward className='text-white'></FaBackward>
                         <p className='text-sm text-white'>Back</p>
                     </div>
-                    <NavLink to='/' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2 option">
-                    <p className='text-xs text-white text-center py-2 border-2 border-white'>HOME</p>
-                   
-                </NavLink>
-                <NavLink to='/collection' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2">
-                    <p className='text-xs text-white text-center py-2 border-2 border-white'>COLLECTION</p>
-                    
-                </NavLink>
-                <NavLink to='/about' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2">
-                    <p className='text-xs text-white text-center py-2 border-2 border-white'>ABOUT</p>
-                   
-                </NavLink>
-                <NavLink to='/contact' onClick={()=>setVisible(false)} className="flex flex-col gap-0.2">
-                    <p className='text-xs text-white text-center py-2 border-2 border-white'>CONTACT</p>
-        
-                </NavLink>
+                    <NavLink to='/' onClick={() => setVisible(false)} className="flex flex-col gap-0.2 option">
+                        <p className='text-xs text-white text-center py-2 border-2 border-white'>HOME</p>
+
+                    </NavLink>
+                    <NavLink to='/collection' onClick={() => setVisible(false)} className="flex flex-col gap-0.2">
+                        <p className='text-xs text-white text-center py-2 border-2 border-white'>COLLECTION</p>
+
+                    </NavLink>
+                    <NavLink to='/about' onClick={() => setVisible(false)} className="flex flex-col gap-0.2">
+                        <p className='text-xs text-white text-center py-2 border-2 border-white'>ABOUT</p>
+
+                    </NavLink>
+                    <NavLink to='/contact' onClick={() => setVisible(false)} className="flex flex-col gap-0.2">
+                        <p className='text-xs text-white text-center py-2 border-2 border-white'>CONTACT</p>
+
+                    </NavLink>
                 </div>
             </div>
         </div>
