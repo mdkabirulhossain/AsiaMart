@@ -7,9 +7,13 @@ import StoreContextProvider from './Context/ShopContext.jsx'
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <StoreContextProvider>
-      <RouterProvider router={router} />
-    </StoreContextProvider>
-  </StrictMode>,
+  <div className="bg-white">
+    <div className="max-w-screen-lg mx-auto px-4">
+      <StrictMode>
+        <StoreContextProvider>
+          <RouterProvider router={router} />
+        </StoreContextProvider>
+      </StrictMode>
+    </div>
+  </div>
 )

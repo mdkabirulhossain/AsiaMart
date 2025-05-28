@@ -11,7 +11,7 @@ const Header = () => {
     const [visible, setVisible] = useState(false);
     const { setShowSearch, getCartCount } = useContext(ShopContext);
     return (
-        <div className='flex justify-between items-center shadow-md h-20 bg-white pr-2 md:pr-6'>
+        <div className=' head flex justify-between items-center  h-20 bg-white pr-2 md:pr-6'>
             <div>
                 {/* <Link to='/'><h1 className='text-orange-500 p-2'>AsiaMart</h1></Link> */}
                 <Link to='/'><img src={logo} className='w-24 md:w-36 h-14 ml-2 md:ml-8' alt="" srcset="" /></Link>
