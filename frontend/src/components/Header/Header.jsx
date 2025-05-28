@@ -50,11 +50,11 @@ const Header = () => {
                 <div className='group relative'>
 
                     <Link to={'/login'}><FaUserAlt /></Link>
-                    <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-1 shadow-md bg-orange-400'>
-                        <div className='flex flex-col gap-2 w-36 py-3 px-5 text-white '>
-                            <Link to={"#"}><p className="cursor-pointer text-sm hover:text-black">My profile</p></Link>
-                            <Link to={"/order"}><p className="cursor-pointer text-sm hover:text-black">Orders</p></Link>
-                            <p className="cursor-pointer text-sm hover:text-black">Logout</p>
+                    <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-1 shadow-md bg-white'>
+                        <div className='flex flex-col gap-2 w-36 py-3 px-5 text-black'>
+                            <Link to={"#"}><p className="cursor-pointer text-sm hover:text-yellow-500">My profile</p></Link>
+                            <Link to={"/order"}><p className="cursor-pointer text-sm hover:text-yellow-500">Orders</p></Link>
+                            <p className="cursor-pointer text-sm hover:text-yellow-500">Logout</p>
                         </div>
                     </div>
 
@@ -76,26 +76,26 @@ const Header = () => {
                     <Link to='/login'><button className='bg-orange-500 px-2 rounded-lg'>login</button></Link>
                 </div> */}
             </div>
-            <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-orange-500 transition-all ${visible ? 'w-full' : 'w-0'}`}>
-                <div className='flex flex-col text-black'>
+            <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+                <div className='flex flex-col '>
                     <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
-                        <FaBackward className='text-white'></FaBackward>
-                        <p className='text-sm text-white'>Back</p>
+                        <FaBackward className='text-black'></FaBackward>
+                        <p className='text-sm text-black'>Back</p>
                     </div>
                     <NavLink to='/' onClick={() => setVisible(false)} className="flex flex-col gap-0.2 option">
-                        <p className='text-xs text-white text-center py-2 border-2 border-white'>HOME</p>
+                        <p className='text-xs text-black text-center py-2 border-2 border-white hover:text-yellow-500'>HOME</p>
 
                     </NavLink>
                     <NavLink to='/collection' onClick={() => setVisible(false)} className="flex flex-col gap-0.2">
-                        <p className='text-xs text-white text-center py-2 border-2 border-white'>COLLECTION</p>
+                        <p className='text-xs text-black text-center py-2 border-2 border-white hover:text-yellow-500'>COLLECTION</p>
 
                     </NavLink>
                     <NavLink to='/about' onClick={() => setVisible(false)} className="flex flex-col gap-0.2">
-                        <p className='text-xs text-white text-center py-2 border-2 border-white'>ABOUT</p>
+                        <p className='text-xs text-black text-center py-2 border-2 border-white hover:text-yellow-500'>ABOUT</p>
 
                     </NavLink>
                     <NavLink to='/contact' onClick={() => setVisible(false)} className="flex flex-col gap-0.2">
-                        <p className='text-xs text-white text-center py-2 border-2 border-white'>CONTACT</p>
+                        <p className='text-xs text-black text-center py-2 border-2 border-white hover:text-yellow-500'>CONTACT</p>
 
                     </NavLink>
                 </div>
