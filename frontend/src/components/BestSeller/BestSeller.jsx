@@ -14,8 +14,8 @@ const BestSeller = () => {
     return (
         <div className='my-10'>
             <div>
-                <p className='text-center text-3xl'>BEST SELLER</p>
-                <p className='text-center text-sm'>Here you find our best selling products</p>
+                <p className='text-center text-3xl text-[#1E255B]'>BEST SELLER</p>
+                <p className='text-center text-sm text-[#1E255B]'>Here you find our best selling products</p>
             </div>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 my-10'>
                 {
