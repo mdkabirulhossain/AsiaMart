@@ -48,7 +48,6 @@ const Header = () => {
                     <FaSearch onClick={() => setShowSearch(true)}></FaSearch>
                 </div>
                 <div className='group relative'>
-
                     <Link to={'/login'}><FaUserAlt /></Link>
                     <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-1 shadow-md bg-white'>
                         <div className='flex flex-col gap-2 w-36 py-3 px-5 text-black'>
